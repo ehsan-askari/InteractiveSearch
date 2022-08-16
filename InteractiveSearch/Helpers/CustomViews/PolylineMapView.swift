@@ -21,6 +21,7 @@ struct PolylineMapView: UIViewRepresentable {
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
         mapView.region = region
+        mapView.removeAnnotations(mapView.annotations)
         mapView.removeOverlays(mapView.overlays)
         
         guard coordinates.count > 0 else {
